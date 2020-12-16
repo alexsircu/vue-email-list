@@ -1,10 +1,8 @@
-
-
 var app = new Vue(
   {
     el: "#root",
     data: {
-      emailCreated: null
+      emailCreated: []
     },
     methods: {
 
@@ -15,7 +13,7 @@ var app = new Vue(
           .get('https://flynn.boolean.careers/exercises/api/random/mail')
           .then((result) => {
             console.log(result.data.response);
-            this.emailCreated += result.data.response;
+            this.emailCreated.push(result.data.response);
           }
         );
       }
